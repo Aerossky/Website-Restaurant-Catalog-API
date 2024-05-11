@@ -1,0 +1,28 @@
+# editor cofiguration
+.vscode/
+.idea/
+
+# Ignore node_modules directory
+node_modules/
+
+# package-lock.json is an auto-generated file for npm
+package-lock.json
+
+# babel
+babel.config.json
+
+# jest
+jest.config.js
+
+# Ignore build output
+dist/
+build/
+*.js
+*.css
+
+# Ignore environment variables file
+.env
+
+# Ignore log and temporary files
+*.log
+*.temp
