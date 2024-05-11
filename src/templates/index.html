@@ -5,7 +5,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Restaurant Apps</title>
-  <meta name="description" content="Restauranku merupakan website dimana anda dapat melihat rekomendasi restaurant terbaik sesuai keinginan anda.">
+  <meta name="description"
+    content="Restauranku merupakan website dimana anda dapat melihat rekomendasi restaurant terbaik sesuai keinginan anda.">
   <meta name="description"
     content="Restauranku merupakan website dimana anda dapat melihat rekomendasi restaurant terbaik sesuai keinginan anda.">
 
@@ -24,12 +25,12 @@
     <div class="logo">RestaurantKu</div>
 
     <!-- Hamburger Button -->
-    <button tabindex="0" class="hamburger-menu">&#9776;</button>
+    <button tabindex="0" id="hamburgerButton">&#9776;</button>
 
     <nav aria-label="Site menu">
-      <ul>
-        <li><a href="http://localhost:8080/">Home</a></li>
-        <li><a href="#">Favorite</a></li>
+      <ul id="navigationDrawer">
+        <li><a href="#/home"">Home</a></li>
+        <li><a href="#/favorite"">Favorite</a></li>
         <li><a href="https://www.linkedin.com/in/risky-aerossky" target="_blank" rel="noopener noreferrer">AboutUs</a>
         </li>
       </ul>
@@ -49,9 +50,9 @@
         <div class="footer-logo">&copy; RestaurantKu</div>
         <nav class="footer-navigation">
           <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Favorite</a></li>
-            <li><a href="#">About Us</a></li>
+            <li><a href="#/home">Home</a></li>
+            <li><a href="#/favorite">Favorite</a></li>
+            <!-- <li><a href="#/now-playing">About Us</a></li> -->
           </ul>
         </nav>
       </div>
