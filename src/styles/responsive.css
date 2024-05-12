@@ -1,0 +1,135 @@
+
+/* responsive mobile */
+@media (max-width: 600px) {
+
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 10px 0px;
+    }
+  
+  
+    /* HEADER START */
+    header{
+        gap: 10px;
+    }
+
+    header .logo {
+      font-size: 24px;
+      padding: 10px;
+    }
+    nav ul {
+      display: none;
+      position: absolute;
+      top: 0;
+      right: 4px; 
+      width: 200px; 
+      background-color: #fff; 
+      padding: 20px;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+      transition: right 0.3s ease; 
+  
+      min-width: 44px;
+      min-height: 44px;
+    }
+  
+    nav ul.menu-open {
+      right: 0; 
+    }
+  
+  
+    #hamburgerButton {
+      z-index: 1000;
+      display: block;
+      font-size: 24px;
+      cursor: pointer;
+    }
+    
+  
+    .contact-info {
+      display: none;
+    }
+  
+    #hamburgerButton{
+      display: block;
+      font-size: 24px;
+    }
+  /* HEADER END */
+  
+  /* HERO START */
+  
+  .hero{
+    z-index: -1;
+  }
+  
+  .hero-text {
+    position: absolute;
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    text-align: center; 
+    color: white; 
+    width: 70%;
+  }
+  
+  .hero-text h1 {
+    font-size: 2rem; 
+    margin-bottom: 10px; 
+  }
+  
+  .hero-text p {
+    font-size: 18px; 
+  }
+  
+  .hero-text .explore-now-cta {
+    font-size: 16px;
+  }
+  
+  .hero-image img {
+    width: 100%;
+    height: 100vh; 
+  }
+  /* HERO END */
+  
+  /* EXPLORE START */
+  .explore {
+    margin-top: 50px;
+    text-align: center;
+  }
+  .explore-text {
+    margin-top: 0px;
+    font-size: 24px;
+  }
+  
+  .explore-description{
+    font-size: 16px;
+  }
+  
+  .explore-content {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+  }
+  
+  .explore-item {
+    margin-bottom: 20px;
+  }
+  /* EXPLORE END */
+  
+  /* FOOTER START */
+  
+  
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .footer-navigation {
+    display:none;
+  }
+  
+  
+  /* FOOTER END */
+  
+  }
+  
