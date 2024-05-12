@@ -88,6 +88,16 @@
       margin-top: 20px;
     }
     /* FOOTER END */
+    
+  /* DETAIL PAGE START */
+  /* Customer review start*/
+  .review-wrapper{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  /* Customer review end */
+
+  /* DETAIL PAGE END */
   }
   
 
@@ -97,7 +107,7 @@
     .container {
       max-width: 1400px;
       margin: 0 auto;
-      padding: 10px 0px;
+      padding: 10px 10px;
     }
   
   
@@ -222,6 +232,34 @@
   
   
   /* FOOTER END */
+
+  /* DETAIL PAGE START */
   
+  .restaurant-info{
+    flex-direction: column;
+    
+  }
+
+  .restaurant-image {
+    margin-right: 0;
+  }
+
+  .restaurant-menu {
+    display: flex;
+    margin-top: 20px;
+
+    flex-direction: column;
   }
   
+  /* Customer review start*/
+  .review-wrapper{
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+  }
+  /* Customer review end */
+
+  /* DETAIL PAGE END */
+  
+}
+  
+
