@@ -18,13 +18,14 @@ img {
 
 main{
   flex-grow: 1;
-  background-color: red;
 }
 
 .container {
   max-width: 1400px;
   margin: 0 auto;
   padding: 0 20px;
+
+  box-sizing: border-box;
 }
 .skip-link {
   position: absolute;
@@ -259,6 +260,11 @@ nav li a:hover {
 .explore-item .card h3.name {
   font-size: 20px;
   margin-bottom: 5px;
+}
+
+.explore-item a {
+  text-decoration: none;
+  color: #333; /* Opsional: menetapkan warna tautan yang sesuai */
 }
 
 .explore-item .card .description {
