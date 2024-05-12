@@ -21,39 +21,39 @@ const createRestaurantDetailTemplate = (restaurant) => `
   <img src="${CONFIG.BASE_IMAGE_URL}${restaurant.pictureId}" alt="Gambar Restoran">
   </div>
   <div class="restaurant-details">
-  <h1>${restaurant.name}</h1>
-  <p>${restaurant.address}, ${restaurant.city}</p>
-  <p class="restaurant-description">${restaurant.description}</p>
+  <h1 tabindex="0">${restaurant.name}</h1>
+  <p tabindex="0">${restaurant.address}, ${restaurant.city}</p>
+  <p class="restaurant-description" tabindex="0">${restaurant.description}</p>
   </div>
 </div>
 <div class="restaurant-menu">
   <div class="food-menu">
-  <h2>Foods</h2>
+  <h2 tabindex="0">Foods</h2>
   <ul>
-  ${restaurant.menus.foods.map(foods => `<li>${foods.name}</li>`).join('')}
+  ${restaurant.menus.foods.map(foods => `<li tabindex="0">${foods.name}</li>`).join('')}
   </ul>
   </div>
   <div class="drink-menu">
-  <h2>Drinks</h2>
+  <h2 tabindex="0">Drinks</h2>
   <ul>
-  ${restaurant.menus.drinks.map(drinks => `<li>${drinks.name}</li>`).join('')}
+  ${restaurant.menus.drinks.map(drinks => `<li tabindex="0">${drinks.name}</li>`).join('')}
   </ul>
   </div>
 </div>
 
 <div class="customer-reviews">
-  <h2>Customer Reviews</h2>
+  <h2 tabindex="0"  >Customer Reviews</h2>
   <div class="review-wrapper">
   ${restaurant.customerReviews.map(review => ` 
   <div class="review-card">
   <div class="review-header">
     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9V1H_6SCYttPw1exidVv5jxOiX7La3c3VnA&usqp=CAU" alt="Avatar" class="avatar">
     <div class="customer-info">
-      <p class="customer-name">${review.name}</p>
-      <p class="date">${review.date}</p>
+      <p class="customer-name" tabindex="0">${review.name}</p>
+      <p class="date" tabindex="0">${review.date}</p>
     </div>
   </div>
-    <p class="review-text">${review.review}</p>
+    <p class="review-text" tabindex="0">${review.review}</p>
   </div>
 `).join('')}
  
