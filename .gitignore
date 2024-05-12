@@ -17,8 +17,7 @@ jest.config.js
 # Ignore build output
 dist/
 build/
-*.js
-*.css
+
 
 # Ignore environment variables file
 .env
