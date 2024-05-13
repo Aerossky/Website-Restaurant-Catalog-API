@@ -6,7 +6,7 @@
   "scripts": {
     "start-dev": "webpack-dev-server --config webpack.dev.js",
     "build": "webpack --config webpack.prod.js",
-    "serve": "http-server dist",
+    "serve": "http-server dist --port 9002",
     "test": "jest",
     "test:watch": "jest --watchAll"
   },
@@ -36,9 +36,11 @@
     "webpack-cli": "^5.1.4",
     "webpack-dev-server": "^4.15.2",
     "webpack-merge": "^5.10.0",
-    "whatwg-fetch": "^3.6.2"
+    "whatwg-fetch": "^3.6.2",
+    "workbox-webpack-plugin": "^7.1.0"
   },
   "dependencies": {
-    "regenerator-runtime": "^0.14.1"
+    "regenerator-runtime": "^0.14.1",
+    "workbox-window": "^7.1.0"
   }
 }
