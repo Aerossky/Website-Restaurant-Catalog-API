@@ -10,7 +10,7 @@ const Detail = {
         <section class="restaurant-detail">
             <div class="container">
               <div class="kembali">
-                <a href="/">< Kembali</a>
+                <a href="#/home">< Kembali</a>
               </div>
               <div class="detail-content">
               
