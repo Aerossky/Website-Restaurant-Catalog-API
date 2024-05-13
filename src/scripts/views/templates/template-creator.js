@@ -47,7 +47,7 @@ const createRestaurantDetailTemplate = (restaurant) => `
   ${restaurant.customerReviews.map(review => ` 
   <div class="review-card">
   <div class="review-header">
-    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9V1H_6SCYttPw1exidVv5jxOiX7La3c3VnA&usqp=CAU" alt="Avatar" class="avatar">
+    <img src="./images/dummy-user.png" alt="Avatar" class="avatar">
     <div class="customer-info">
       <p class="customer-name" tabindex="0">${review.name}</p>
       <p class="date" tabindex="0">${review.date}</p>
