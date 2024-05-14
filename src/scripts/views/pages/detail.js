@@ -21,13 +21,26 @@ const Detail = {
   },
 
   async afterRender() {
-    // Fungsi ini akan dipanggil setelah render()
     const url = UrlParser.parseActiveUrlWithoutCombiner();
-    const restaurant = await RestaurantSource.detailRestaurant(url.id);
+    let restaurant;
+    try {
+      // Coba untuk mengambil data restoran dari sumber data
+      restaurant = await RestaurantSource.detailRestaurant(url.id);
+    } catch (error) {
+      // Tangani kesalahan saat pengambilan data
+      console.error('Failed to fetch restaurant data:', error);
+      restaurant = null;
+    }
+
+    // Tampilkan data restoran atau pesan kesalahan
     const restaurantContainer = document.querySelector('.detail-content');
-    restaurantContainer.innerHTML = createRestaurantDetailTemplate(restaurant);
-    console.log(restaurant);
+    if (restaurant) {
+      // Jika data restoran berhasil diambil, tampilkan detail restoran
+      restaurantContainer.innerHTML = createRestaurantDetailTemplate(restaurant);
+    } else {
+      // Jika tidak ada data restoran (atau terjadi kesalahan saat pengambilan), tampilkan pesan
+      restaurantContainer.innerHTML = "<p>Sorry, the data is not available. Please check your internet connection.</p>";
+    }
   },
 };
-
 export default Detail;
