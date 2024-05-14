@@ -56,15 +56,11 @@ const Detail = {
     } else {
       // Jika tidak ada data restoran (atau terjadi kesalahan saat pengambilan), tampilkan pesan
       restaurantContainer.innerHTML = `
-      <div class="no-data">
-        <img src="./images/gif/no-data.gif" alt="No Data Available" style="" />
+      <div class="no-connection">
+        <img src="./images/gif/no-connection.gif" alt="No Data Available" style="" />
         <p>Sorry, the data is not available. Please check your internet connection.</p>
       </div>
-      
-     
     `;
-
-
       // Sembunyikan kontainer tombol suka jika data restoran tidak tersedia
       likeButtonContainer.style.display = 'none';
     }

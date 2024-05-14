@@ -20,9 +20,19 @@ const Favorite = {
         const restaurants = await FavoriteRestaurantIdb.getAllRestaurants();
         const restaurantsContainer = document.querySelector('.explore-content');
 
-        restaurants.forEach((restaurant) => {
-            restaurantsContainer.innerHTML += createRestaurantitemTemplate(restaurant);
-        });
+        if (restaurants.length === 0) {
+            restaurantsContainer.classList.remove('explore-content');
+            restaurantsContainer.innerHTML = `
+            <div class="no-data">
+                <img src="./images/gif/no-data.gif" alt="No Data Available" />
+                <p>You haven't added any restaurants to your favorites yet.</p>
+            </div>
+            `;
+        } else {
+            restaurants.forEach((restaurant) => {
+                restaurantsContainer.innerHTML += createRestaurantitemTemplate(restaurant);
+            });
+        }
     },
 };
 

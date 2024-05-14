@@ -51,10 +51,35 @@ main{
 }
 
 
-/* NO DATA START*/
-.no-data {
+/* NO CONNECTION START*/
+.no-connection {
   text-align: center;
   margin: 20px 0;
+}
+
+.no-connection img {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  margin: 0 auto;
+  display: block;
+}
+
+.no-connection p {
+  font-size: 16px;
+  color: #333;
+  margin-top: 10px;
+}
+/* NO CONNECTION END */
+
+/* NO DATA START */
+.no-data {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-top: 50px; 
 }
 
 .no-data img {
@@ -71,6 +96,7 @@ main{
   margin-top: 10px;
 }
 /* NO DATA END */
+
 /* LIKE START */
 .like {
   width: 55px;
