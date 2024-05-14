@@ -49,6 +49,28 @@ main{
 .skip-link:focus {
    top: 0;
 }
+
+
+/* NO DATA START*/
+.no-data {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.no-data img {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  margin: 0 auto;
+  display: block;
+}
+
+.no-data p {
+  font-size: 16px;
+  color: #333;
+  margin-top: 10px;
+}
+/* NO DATA END */
 /* LIKE START */
 .like {
   width: 55px;
