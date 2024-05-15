@@ -1,6 +1,5 @@
 import CONFIG from "../../globals/config";
 
-
 const createRestaurantitemTemplate = (restaurant) => `
 <div class="explore-item">
 <a href="/#/detail/${restaurant.id}">
@@ -41,10 +40,27 @@ const createRestaurantDetailTemplate = (restaurant) => `
   </div>
 </div>
 
+<div class="add-review">
+  <h2>Add Your Review</h2>
+  <form id="reviewForm">
+    <label for="name">Your Name:</label><br>
+    <input type="text" id="name" name="name" required>
+    <label for="review">Your Review:</label>
+    <textarea id="review" name="review" required></textarea>
+    <button type="submit">Submit</button>
+  </form>
+</div>
+
 <div class="customer-reviews">
   <h2 tabindex="0"  >Customer Reviews</h2>
   <div class="review-wrapper">
-  ${restaurant.customerReviews.map(review => ` 
+  ${createCustomerReviewTemplate(restaurant.customerReviews)}
+  </div>
+</div>
+`;
+
+const createCustomerReviewTemplate = (reviews) => {
+  return reviews.map(review => ` 
   <div class="review-card">
   <div class="review-header">
     <img src="./images/dummy-user.png" alt="Avatar" class="avatar">
@@ -55,11 +71,8 @@ const createRestaurantDetailTemplate = (restaurant) => `
   </div>
     <p class="review-text" tabindex="0">${review.review}</p>
   </div>
-`).join('')}
- 
-  </div>
-</div>
-`;
+  `).join('');
+};
 
 const createLikeButtonTemplate = () => `
   <button aria-label="like this movie" id="likeButton" class="like">
@@ -73,10 +86,10 @@ const createLikedButtonTemplate = () => `
   </button>
 `;
 
-
 export {
   createRestaurantitemTemplate,
   createRestaurantDetailTemplate,
+  createCustomerReviewTemplate,
   createLikeButtonTemplate,
   createLikedButtonTemplate,
 };

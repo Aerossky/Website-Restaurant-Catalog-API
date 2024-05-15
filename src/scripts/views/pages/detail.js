@@ -1,9 +1,12 @@
 import UrlParser from '../../routes/url-parser';
 import RestaurantSource from "../../data/restaurant-source";
 import {
-  createRestaurantDetailTemplate
+  createRestaurantDetailTemplate,
+  createCustomerReviewTemplate // Impor fungsi template review
 } from '../templates/template-creator';
 import LikeButtonInitiator from '../../utils/like-button-initiator';
+import CONFIG from "../../globals/config";
+import formatDate from '../../utils/date-formatter';
 
 const Detail = {
   async render() {
@@ -26,22 +29,18 @@ const Detail = {
     const url = UrlParser.parseActiveUrlWithoutCombiner();
     let restaurant;
     try {
-      // Coba untuk mengambil data restoran dari sumber data
       restaurant = await RestaurantSource.detailRestaurant(url.id);
     } catch (error) {
-      // Tangani kesalahan saat pengambilan data
       console.error('Failed to fetch restaurant data:', error);
       restaurant = null;
     }
 
-    // Tampilkan data restoran atau pesan kesalahan
     const restaurantContainer = document.querySelector('.detail-content');
     const likeButtonContainer = document.querySelector('#likeButtonContainer');
+
     if (restaurant) {
-      // Jika data restoran berhasil diambil, tampilkan detail restoran
       restaurantContainer.innerHTML = createRestaurantDetailTemplate(restaurant);
 
-      // Inisialisasi tombol suka hanya jika data restoran berhasil diambil
       LikeButtonInitiator.init({
         likeButtonContainer,
         restaurant: {
@@ -53,17 +52,58 @@ const Detail = {
           rating: restaurant.rating,
         },
       });
+
+      const reviewForm = document.getElementById('reviewForm');
+      reviewForm.addEventListener('submit', async (event) => {
+        event.preventDefault();
+
+        const name = document.getElementById('name').value;
+        const review = document.getElementById('review').value;
+
+        const reviewData = {
+          id: url.id,
+          name: name,
+          review: review,
+        };
+
+        try {
+          const response = await fetch(`${CONFIG.BASE_URL}/review`, {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(reviewData),
+          });
+
+          const result = await response.json();
+
+          if (!result.error) {
+            restaurant.customerReviews.push({
+              name: name,
+              review: review,
+              date: formatDate(new Date()), // Format the date here
+            });
+
+            const reviewContainer = document.querySelector('.review-wrapper');
+            reviewContainer.innerHTML = createCustomerReviewTemplate(restaurant.customerReviews);
+          } else {
+            alert('Failed to submit review');
+          }
+        } catch (error) {
+          console.error('Failed to submit review:', error);
+          alert('Failed to submit review');
+        }
+      });
     } else {
-      // Jika tidak ada data restoran (atau terjadi kesalahan saat pengambilan), tampilkan pesan
       restaurantContainer.innerHTML = `
       <div class="no-connection">
         <img src="./images/gif/no-connection.gif" alt="No Data Available" style="" />
         <p>Sorry, the data is not available. Please check your internet connection.</p>
       </div>
     `;
-      // Sembunyikan kontainer tombol suka jika data restoran tidak tersedia
       likeButtonContainer.style.display = 'none';
     }
   },
 };
+
 export default Detail;

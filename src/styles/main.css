@@ -458,6 +458,49 @@ footer {
   flex: 1;
   margin-right: 20px;
 }
+/* Form review start */
+.add-review {
+  padding: 20px;
+}
+
+.add-review h2 {
+  margin-bottom: 10px;
+}
+
+.add-review label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.add-review input[type="text"],
+.add-review textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.add-review button[type="submit"] {
+  font-size: 16px;
+  width: 100px;
+  height: 44px;
+  background-color: #f1c40f;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+
+
+  display: block;
+  margin: 0 auto;
+}
+
+.add-review button[type="submit"]:hover {
+  background-color: #d4ac0d; /* Lighter shade on hover */
+}
+
+/* Form review end */
 
 /* Customer review start */
 .customer-reviews {
