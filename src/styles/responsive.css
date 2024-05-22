@@ -1,0 +1,267 @@
+
+  /* responsive tablet */
+  @media (max-width: 1100px) {
+    .container .contact-info{
+      display: none;
+    }
+  
+    .container {
+      padding: 0 30px; 
+      box-sizing: border-box;
+    }
+  
+    /* HEADER START */
+    nav ul {
+      display: flex;
+      justify-content: center; 
+  
+    }
+  
+    nav li {
+      margin: 0 15px; 
+    }
+  
+  
+    .hamburger-menu {
+      display: none;
+    }
+    /* HEADER END */
+  
+  /* HERO START */
+  
+  .hero-text {
+    position: absolute;
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    text-align: center; 
+    color: white; 
+    width: 65%;
+  
+    padding: 35px;
+  }
+  
+  .hero-text h1 {
+    font-size: 3rem; 
+    margin-bottom: 10px; 
+  }
+  
+  .hero-text p {
+    font-size: 20px; 
+  }
+  
+  .hero-text .explore-now-cta {
+    font-size: 18px;
+  }
+  
+  
+  .hero-image img{
+    width:100%;
+    height:100vh;
+    object-fit: cover;
+  }
+  /* HERO END */
+  
+    /* EXPLORE START */
+    .explore-content {
+      grid-template-columns: repeat(2, 1fr); 
+    }
+  
+    .explore-item {
+      width: auto; 
+      margin-bottom: 30px; 
+    }
+    /* EXPLORE END */
+  
+    /* FOOTER START */
+    .footer-navigation {
+      display: flex; 
+      justify-content: center; 
+      margin-top: 20px;
+    }
+  
+    .footer-navigation ul li {
+      margin: 0 10px; 
+    }
+  
+    .footer-text p {
+      margin-top: 20px;
+    }
+    /* FOOTER END */
+    
+  /* DETAIL PAGE START */
+  /* Customer review start*/
+  .review-wrapper{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  /* Customer review end */
+
+  /* DETAIL PAGE END */
+  }
+  
+
+/* responsive mobile */
+@media (max-width: 600px) {
+
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 10px 10px;
+    }
+  
+  
+    /* HEADER START */
+    header{
+        gap: 10px;
+    }
+
+    header .logo {
+      font-size: 24px;
+      padding: 10px;
+    }
+    nav ul {
+      display: none;
+      position: absolute;
+      top: 0;
+      right: 4px; 
+      width: 200px; 
+      background-color: #fff; 
+      padding: 20px;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+      transition: right 0.3s ease; 
+  
+      min-width: 44px;
+      min-height: 44px;
+    }
+  
+    nav ul.menu-open {
+      right: 0; 
+    }
+  
+  
+    #hamburgerButton {
+      width:44px;
+      height: 44px;
+      z-index: 1000;
+      display: block;
+      font-size: 24px;
+      cursor: pointer;
+    }
+    
+  
+    .contact-info {
+      display: none;
+    }
+  
+    #hamburgerButton{
+      display: block;
+      font-size: 24px;
+    }
+  /* HEADER END */
+  
+  /* HERO START */
+  
+  .hero{
+    z-index: -1;
+  }
+  
+  .hero-text {
+    position: absolute;
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    text-align: center; 
+    color: white; 
+    width: 70%;
+  }
+  
+  .hero-text h1 {
+    font-size: 2rem; 
+    margin-bottom: 10px; 
+  }
+  
+  .hero-text p {
+    font-size: 18px; 
+  }
+  
+  .hero-text .explore-now-cta {
+    font-size: 16px;
+  }
+  
+  .hero-image img {
+    width: 100%;
+    height: 100vh; 
+  }
+  /* HERO END */
+  
+  /* EXPLORE START */
+  .explore {
+    margin-top: 50px;
+    text-align: center;
+  }
+  .explore-text {
+    margin-top: 0px;
+    font-size: 24px;
+  }
+  
+  .explore-description{
+    font-size: 16px;
+  }
+  
+  .explore-content {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+  }
+  
+  .explore-item {
+    margin-bottom: 20px;
+  }
+  /* EXPLORE END */
+  
+  /* FOOTER START */
+  
+  
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .footer-navigation {
+    display:none;
+  }
+  
+  
+  /* FOOTER END */
+
+  /* DETAIL PAGE START */
+  
+  .restaurant-info{
+    flex-direction: column;
+    
+  }
+
+  .restaurant-image {
+    margin-right: 0;
+  }
+
+  .restaurant-menu {
+    display: flex;
+    margin-top: 20px;
+
+    flex-direction: column;
+  }
+  
+  /* Customer review start*/
+  .review-wrapper{
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+  }
+  /* Customer review end */
+
+  /* DETAIL PAGE END */
+  
+}
+  
+

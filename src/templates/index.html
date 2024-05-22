@@ -5,91 +5,62 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Restaurant Apps</title>
-  <meta name="description" content="Restauranku merupakan website dimana anda dapat melihat rekomendasi restaurant terbaik sesuai keinginan anda.">
+  <meta name="description"
+    content="Restauranku merupakan website dimana anda dapat melihat rekomendasi restaurant terbaik sesuai keinginan anda.">
+  <meta name="description"
+    content="Restauranku merupakan website dimana anda dapat melihat rekomendasi restaurant terbaik sesuai keinginan anda.">
 
   <!-- Font -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;700&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    crossorigin="anonymous">
+
+  <!-- Web Manifest -->
+  <link rel="icon" href="./favicon.png">
+  <link rel="manifest" href="./app.webmanifest">
 </head>
 
 <body>
   <!-- Skip to content -->
   <a href="#hero" class="skip-link">Skip To Content</a>
+
   <!-- Header Start -->
   <header class="container">
     <div class="logo">RestaurantKu</div>
-    <nav>
-      <button tabindex="0" class="hamburger-menu">&#9776;</button>
-      <ul>
-        <li><a href="http://localhost:8080/">Home</a></li>
-        <li><a href="#">Favorite</a></li>
-        <li><a href="https://www.linkedin.com/in/risky-aerossky" target="_blank" rel="noopener noreferrer">AboutUs</a></li>
+
+    <!-- Hamburger Button -->
+    <button tabindex="0" id="hamburgerButton">&#9776;</button>
+
+    <nav aria-label="Site menu">
+      <ul id="navigationDrawer">
+        <li><a href="#/home">Home</a></li>
+        <li><a href=" #/favorite"">Favorite </a> </li> <li><a href=" https://www.linkedin.com/in/risky-aerossky"
+            target="_blank" rel="noopener noreferrer">AboutUs</a>
+        </li>
       </ul>
     </nav>
-    <div tabindex="0" class="contact-info">+62 081234124123</div>
 
+    <div tabindex="-1" class="contact-info">+62 081234124123</div>
   </header>
+
   <!-- Header End -->
 
-  <main>
-    <!-- HERO START -->
-    <section class="hero">
-      <div class="container">
-        <div class="hero-content">
-          <div id="hero" class="hero-text">
-            <h1 tabindex="0">Explore the Flavors of RestaurantKu</h1>
-            <p tabindex="0">Uncover Top Dining Experiences in Your City</p>
-            <a href="#explore" class="explore-now-cta">Explore Now</a>
-          </div>
-          <div class="hero-image">
-            <img src="./images/heros/hero-image_1.jpg" alt="Hero Image" />
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- HERO END -->
-
-    <!-- EXPLORE START -->
-    <div class="container explore">
-      <div class="explore-text" tabindex="0">Explore Restaurant</div>
-      <p class="explore-description" tabindex="0">Discover a variety of delicious foods and interesting dining places in
-        your city.
-        Start
-        your culinary adventure now!</p>
-    </div>
-
-    <section id="explore">
-      <div class="container">
-
-        <div class="explore-content">
-
-          <!-- <div class="explore-item">
-            <div class="rating">4.6</div>
-            <img src="https://restaurant-api.dicoding.dev/images/medium/41" />
-            <div class="card">
-              <p class="city">City Name</p>
-              <h3 class="name">name</h3>
-              <p class="description">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magni, tempore.</p>
-            </div>
-          </div> -->
-
-
-        </div>
-    </section>
-    <!-- EXPLORE END -->
-  </main>
+  <main id="mainContent" tabindex="0"></main>
 
   <!-- Footer Start -->
-  <footer>
+  <footer id="footer">
     <div class="container">
       <div class="footer-content">
         <div class="footer-logo">&copy; RestaurantKu</div>
         <nav class="footer-navigation">
           <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Favorite</a></li>
-            <li><a href="#">About Us</a></li>
+            <li><a href="#/home">Home</a></li>
+            <li><a href="#/favorite">Favorite</a></li>
+            <!-- <li><a href="#/now-playing">About Us</a></li> -->
           </ul>
         </nav>
       </div>
