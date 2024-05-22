@@ -1,11 +1,11 @@
-import RestaurantSource from "../../data/restaurant-source";
+import RestaurantSource from '../../data/restaurant-source';
 import {
-    createRestaurantitemTemplate
-} from "../templates/template-creator";
+  createRestaurantitemTemplate,
+} from '../templates/template-creator';
 
 const Home = {
-    async render() {
-        return `
+  async render() {
+    return `
         <!-- HERO START -->
         <section class="hero">
           <div class="container">
@@ -69,17 +69,17 @@ const Home = {
         </div>
     </section>
       `;
-    },
+  },
 
-    async afterRender() {
-        // Fungsi ini akan dipanggil setelah render()
-        const restaurants = await RestaurantSource.listRestaurants();
-        const restaurantContainer = document.querySelector('.explore-content');
+  async afterRender() {
+    // Fungsi ini akan dipanggil setelah render()
+    const restaurants = await RestaurantSource.listRestaurants();
+    const restaurantContainer = document.querySelector('.explore-content');
 
-        restaurants.forEach((restaurant) => {
-            restaurantContainer.innerHTML += createRestaurantitemTemplate(restaurant);
-        });
-    },
+    restaurants.forEach((restaurant) => {
+      restaurantContainer.innerHTML += createRestaurantitemTemplate(restaurant);
+    });
+  },
 };
 
 export default Home;
