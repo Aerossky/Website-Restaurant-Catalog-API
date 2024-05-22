@@ -472,13 +472,19 @@ footer {
   margin-bottom: 5px;
 }
 
-.add-review input[type="text"],
+
 .add-review textarea {
   width: 100%;
-  padding: 8px;
   border: 1px solid #ccc;
   border-radius: 5px;
   margin-bottom: 10px;
+  height: 100px;
+}
+
+.add-review input[type="text"] {
+  width: 100%;
+  border: 1px solid #ccc;
+  height: 44px;
 }
 
 .add-review button[type="submit"] {
