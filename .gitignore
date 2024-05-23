@@ -10,7 +10,6 @@ package-lock.json
 
 
 # Ignore build output
-dist/
 build/
 
 

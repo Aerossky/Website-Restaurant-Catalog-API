@@ -19,7 +19,6 @@ const Home = {
               <div class="hero-image">
                 <picture>
                   <source media="(max-width: 600px)" data-srcset="./images/heros/hero-image-small.jpg">
-                  <source media="(max-width: 1024px)" data-srcset="./images/heros/hero-image-medium.jpg">
                   <source media="(min-width: 1025px)" data-srcset="./images/heros/hero-image-large.jpg">
                   <img class="lazyload" data-src="./images/heros/hero-image-large.jpg" alt="Hero Image" />
                 </picture>
