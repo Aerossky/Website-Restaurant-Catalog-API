@@ -17,7 +17,7 @@ const createRestaurantitemTemplate = (restaurant) => `
 const createRestaurantDetailTemplate = (restaurant) => `
 <div class="restaurant-info">
   <div class="restaurant-image">
-  <img src="${CONFIG.BASE_IMAGE_URL}${restaurant.pictureId}" alt="Gambar Restoran">
+  <img src="${CONFIG.BASE_IMAGE_URL}${restaurant.pictureId}" alt="Gambar Restoran" crossorigin="anonymous">
   </div>
   <div class="restaurant-details">
   <h1 tabindex="0">${restaurant.name}</h1>
