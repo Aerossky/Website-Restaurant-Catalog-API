@@ -1,4 +1,4 @@
-import CONFIG from "../../globals/config";
+import CONFIG from '../../globals/config';
 
 const createRestaurantitemTemplate = (restaurant) => `
 <div class="explore-item">
@@ -29,13 +29,13 @@ const createRestaurantDetailTemplate = (restaurant) => `
   <div class="food-menu">
   <h2 tabindex="0">Foods</h2>
   <ul>
-  ${restaurant.menus.foods.map(foods => `<li tabindex="0">${foods.name}</li>`).join('')}
+  ${restaurant.menus.foods.map((foods) => `<li tabindex="0">${foods.name}</li>`).join('')}
   </ul>
   </div>
   <div class="drink-menu">
   <h2 tabindex="0">Drinks</h2>
   <ul>
-  ${restaurant.menus.drinks.map(drinks => `<li tabindex="0">${drinks.name}</li>`).join('')}
+  ${restaurant.menus.drinks.map((drinks) => `<li tabindex="0">${drinks.name}</li>`).join('')}
   </ul>
   </div>
 </div>
@@ -59,8 +59,7 @@ const createRestaurantDetailTemplate = (restaurant) => `
 </div>
 `;
 
-const createCustomerReviewTemplate = (reviews) => {
-  return reviews.map(review => ` 
+const createCustomerReviewTemplate = (reviews) => reviews.map((review) => ` 
   <div class="review-card">
   <div class="review-header">
     <img src="./images/dummy-user.png" alt="Avatar" class="avatar">
@@ -72,16 +71,15 @@ const createCustomerReviewTemplate = (reviews) => {
     <p class="review-text" tabindex="0">${review.review}</p>
   </div>
   `).join('');
-};
 
 const createLikeButtonTemplate = () => `
-  <button aria-label="like this movie" id="likeButton" class="like">
+  <button aria-label="like this restaurant" id="likeButton" class="like">
      <i class="fa fa-heart-o" aria-hidden="true"></i>
   </button>
 `;
 
 const createLikedButtonTemplate = () => `
-  <button aria-label="unlike this movie" id="likeButton" class="like">
+  <button aria-label="unlike this restaurant" id="likeButton" class="like">
     <i class="fa fa-heart" aria-hidden="true"></i>
   </button>
 `;

@@ -1,11 +1,11 @@
 import UrlParser from '../../routes/url-parser';
-import RestaurantSource from "../../data/restaurant-source";
+import RestaurantSource from '../../data/restaurant-source';
 import {
   createRestaurantDetailTemplate,
-  createCustomerReviewTemplate // Impor fungsi template review
+  createCustomerReviewTemplate, // Impor fungsi template review
 } from '../templates/template-creator';
 import LikeButtonInitiator from '../../utils/like-button-initiator';
-import CONFIG from "../../globals/config";
+import CONFIG from '../../globals/config';
 import formatDate from '../../utils/date-formatter';
 
 const Detail = {
@@ -62,8 +62,8 @@ const Detail = {
 
         const reviewData = {
           id: url.id,
-          name: name,
-          review: review,
+          name,
+          review,
         };
 
         try {
@@ -79,8 +79,8 @@ const Detail = {
 
           if (!result.error) {
             restaurant.customerReviews.push({
-              name: name,
-              review: review,
+              name,
+              review,
               date: formatDate(new Date()), // Format the date here
             });
 
@@ -97,7 +97,6 @@ const Detail = {
     } else {
       restaurantContainer.innerHTML = `
       <div class="no-connection">
-        <img src="./images/gif/no-connection.gif" alt="No Data Available" style="" />
         <p>Sorry, the data is not available. Please check your internet connection.</p>
       </div>
     `;

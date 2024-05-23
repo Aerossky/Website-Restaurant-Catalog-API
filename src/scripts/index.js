@@ -6,18 +6,17 @@ import swRegister from './utils/sw-register';
 
 console.log('Hello Coders! :)');
 
-
 const app = new App({
-    button: document.querySelector('#hamburgerButton'),
-    drawer: document.querySelector('#navigationDrawer'),
-    content: document.querySelector('#mainContent'),
+  button: document.querySelector('#hamburgerButton'),
+  drawer: document.querySelector('#navigationDrawer'),
+  content: document.querySelector('#mainContent'),
 });
 
 window.addEventListener('hashchange', () => {
-    app.renderPage();
+  app.renderPage();
 });
 
 window.addEventListener('load', () => {
-    app.renderPage();
-    swRegister();
-})
+  app.renderPage();
+  swRegister();
+});
