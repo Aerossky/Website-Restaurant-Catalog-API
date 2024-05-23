@@ -16,7 +16,10 @@ const Home = {
                 <a href="#explore" class="explore-now-cta">Explore Now</a>
               </div>
               <div class="hero-image">
-                <img src="./images/heros/hero-image_1.jpg" alt="Hero Image" />
+              <picture>
+                <source media="(max-width: 600px)" srcset="./images/heros/hero-image-small.jpg">
+                <img src="./images/heros/hero-image-large.jpg" alt="Hero Image" />
+              </picture>
               </div>
             </div>
           </div>

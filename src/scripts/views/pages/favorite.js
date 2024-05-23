@@ -24,7 +24,6 @@ const Favorite = {
       restaurantsContainer.classList.remove('explore-content');
       restaurantsContainer.innerHTML = `
             <div class="no-data">
-                <img src="./images/gif/no-data.gif" alt="No Data Available" />
                 <p class="no-data-text">You haven't added any restaurants to your favorites yet.</p>
             </div>
             `;

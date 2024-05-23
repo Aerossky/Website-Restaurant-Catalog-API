@@ -9,7 +9,8 @@
     "serve": "http-server dist --port 9002",
     "test": "jest",
     "test:watch": "jest --watchAll",
-    "e2e": "codeceptjs run --steps"
+    "e2e": "codeceptjs run --steps",
+    "build-image": "node sharp.js"
   },
   "keywords": [],
   "author": "your_name <your.email@domain.com>",
@@ -34,9 +35,12 @@
     "globals": "^15.2.0",
     "html-webpack-plugin": "^5.6.0",
     "http-server": "^14.1.1",
+    "imagemin-mozjpeg": "^9.0.0",
+    "imagemin-webpack-plugin": "^2.4.2",
     "jest": "^29.6.1",
     "jest-environment-jsdom": "^29.6.1",
     "playwright": "^1.44.0",
+    "sharp": "^0.33.4",
     "style-loader": "^3.3.4",
     "webpack": "^5.91.0",
     "webpack-cli": "^5.1.4",
