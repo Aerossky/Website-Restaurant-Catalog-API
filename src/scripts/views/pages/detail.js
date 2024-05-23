@@ -97,7 +97,6 @@ const Detail = {
     } else {
       restaurantContainer.innerHTML = `
       <div class="no-connection">
-        <img src="./images/gif/no-connection.gif" alt="No Data Available" style="" />
         <p>Sorry, the data is not available. Please check your internet connection.</p>
       </div>
     `;
