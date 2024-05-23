@@ -1,13 +1,19 @@
 import LikeButtonInitiator from '../src/scripts/utils/like-button-initiator';
-// import FavoriteMovieIdb from '../src/scripts/data/favorite-restaurant-idb';
+import FavoriteRestaurantIdb from '../src/scripts/data/favorite-restaurant-idb';
 
 // eslint-disable-next-line no-undef
-describe('Liking A Movie', () => {
+describe('Liking A restaurant', () => {
+  const addLikeButtonContainer = () => {
+    document.body.innerHTML = '<div id="likeButtonContainer"></div>';
+  };
+
+  beforeEach(() => {
+    addLikeButtonContainer();
+  });
+
   // Case 1 Memunculkan tombol like ketika restaurant belum disukai
   // eslint-disable-next-line no-undef
   it('should show the like button when the restaurant has not been liked before', async () => {
-    document.body.innerHTML = '<div id="likeButtonContainer"></div>';
-
     await LikeButtonInitiator.init({
       likeButtonContainer: document.querySelector('#likeButtonContainer'),
       restaurant: {
@@ -15,12 +21,11 @@ describe('Liking A Movie', () => {
       },
     });
     // eslint-disable-next-line no-undef
-    expect(document.querySelector('[aria-label="like this movie"]')).toBeTruthy();
+    expect(document.querySelector('[aria-label="like this restaurant"]')).toBeTruthy();
   });
 
+  // Case 2 Tidak memunculkan tombol unlike ketika restaurant belum disukai
   it('should not show the unlike button when the restaurant has not been liked before', async () => {
-    document.body.innerHTML = '<div id="likeButtonContainer"></div>';
-
     await LikeButtonInitiator.init({
       likeButtonContainer: document.querySelector('#likeButtonContainer'),
       restaurant: {
@@ -28,6 +33,49 @@ describe('Liking A Movie', () => {
       },
     });
     // eslint-disable-next-line no-undef
-    expect(document.querySelector('[aria-label="unlike this movie"]')).toBeFalsy();
+    expect(document.querySelector('[aria-label="unlike this restaurant"]')).toBeFalsy();
+  });
+
+  // case 3 Harus bisa menyukai restaurant
+  it('should be able to like the restaurant', async () => {
+    await LikeButtonInitiator.init({
+      likeButtonContainer: document.querySelector('#likeButtonContainer'),
+      restaurant: {
+        id: 1,
+      },
+    });
+
+    document.querySelector('#likeButton').dispatchEvent(new Event('click'));
+    const restaurant = await FavoriteRestaurantIdb.getRestaurant(1);
+    expect(restaurant).toEqual({ id: 1 });
+
+    await FavoriteRestaurantIdb.deleteRestaurant(1);
+  });
+
+  // case 4 Tidak boleh menyukai restaurant yang sama lebih dari satu kali
+  it('should not like the restaurant more than once', async () => {
+    await LikeButtonInitiator.init({
+      likeButtonContainer: document.querySelector('#likeButtonContainer'),
+      restaurant: {
+        id: 1,
+      },
+    });
+
+    await FavoriteRestaurantIdb.putRestaurant({ id: 1 });
+    document.querySelector('#likeButton').dispatchEvent(new Event('click'));
+    expect(await FavoriteRestaurantIdb.getAllRestaurants()).toEqual([{ id: 1 }]);
+
+    await FavoriteRestaurantIdb.deleteRestaurant(1);
+  });
+
+  // case 5 Tidak boleh menyukai restaurant tanpa id
+  xit('should not like a restaurant without an id', async () => {
+    await LikeButtonInitiator.init({
+      likeButtonContainer: document.querySelector('#likeButtonContainer'),
+      restaurant: {},
+    });
+
+    document.querySelector('#likeButton').dispatchEvent(new Event('click'));
+    expect(await FavoriteRestaurantIdb.getAllRestaurants()).toEqual([]);
   });
 });
