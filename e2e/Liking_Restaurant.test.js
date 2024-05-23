@@ -2,13 +2,10 @@ const assert = require('assert');
 
 Feature('Liking Restaurant');
 
-Scenario('showing empty liked movies', ({ I }) => {
+Scenario('liking one restaurant', async ({ I }) => {
   I.amOnPage('/#/favorite');
   I.see("You haven't added any restaurants to your favorites yet.", '.no-data-text');
-  I.amOnPage('/');
-});
 
-Scenario('liking one restaurant', async ({ I }) => {
   I.amOnPage('/');
   I.seeElement('.explore-item .card .name');
   const firstRestaurant = locate('.explore-item .card .name').first();
