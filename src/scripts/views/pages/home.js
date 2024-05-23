@@ -2,6 +2,7 @@ import RestaurantSource from '../../data/restaurant-source';
 import {
   createRestaurantitemTemplate,
 } from '../templates/template-creator';
+import 'lazysizes';
 
 const Home = {
   async render() {
@@ -16,10 +17,12 @@ const Home = {
                 <a href="#explore" class="explore-now-cta">Explore Now</a>
               </div>
               <div class="hero-image">
-              <picture>
-                <source media="(max-width: 600px)" srcset="./images/heros/hero-image-small.jpg">
-                <img src="./images/heros/hero-image-large.jpg" alt="Hero Image" />
-              </picture>
+                <picture>
+                  <source media="(max-width: 600px)" data-srcset="./images/heros/hero-image-small.jpg">
+                  <source media="(max-width: 1024px)" data-srcset="./images/heros/hero-image-medium.jpg">
+                  <source media="(min-width: 1025px)" data-srcset="./images/heros/hero-image-large.jpg">
+                  <img class="lazyload" data-src="./images/heros/hero-image-large.jpg" alt="Hero Image" />
+                </picture>
               </div>
             </div>
           </div>
@@ -29,59 +32,29 @@ const Home = {
         <!-- EXPLORE START -->
         <div class="container explore">
           <div class="explore-text" tabindex="0">Explore Restaurant</div>
-          <p class="explore-description" tabindex="0">Discover a variety of delicious foods and interesting dining places in
-            your city.
-            Start
-            your culinary adventure now!</p>
+          <p class="explore-description" tabindex="0">Discover a variety of delicious foods and interesting dining places in your city. Start your culinary adventure now!</p>
         </div>
     
         <section id="explore">
           <div class="container">
-    
             <div class="explore-content">
-    
-              <!-- <div class="explore-item">
-                <div class="rating">4.6</div>
-                <img src="https://restaurant-api.dicoding.dev/images/medium/41" />
-                <div class="card">
-                  <p class="city">City Name</p>
-                  <h3 class="name">name</h3>
-                  <p class="description">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magni, tempore.</p>
-                </div>
-              </div> -->
-    
-    
+              <!-- List of restaurants will be dynamically generated here -->
             </div>
+          </div>
         </section>
-
-    <section id="explore">
-      <div class="container">
-
-        <div class="explore-content">
-
-          <!-- <div class="explore-item">
-            <div class="rating">4.6</div>
-            <img src="https://restaurant-api.dicoding.dev/images/medium/41" />
-            <div class="card">
-              <p class="city">City Name</p>
-              <h3 class="name">name</h3>
-              <p class="description">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magni, tempore.</p>
-            </div>
-          </div> -->
-
-        </div>
-    </section>
       `;
   },
 
   async afterRender() {
-    // Fungsi ini akan dipanggil setelah render()
     const restaurants = await RestaurantSource.listRestaurants();
     const restaurantContainer = document.querySelector('.explore-content');
 
     restaurants.forEach((restaurant) => {
       restaurantContainer.innerHTML += createRestaurantitemTemplate(restaurant);
     });
+
+    // Initialize lazysizes after adding restaurant items
+    lazySizes.init();
   },
 };
 
